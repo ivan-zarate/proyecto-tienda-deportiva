@@ -1,0 +1,860 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo img {
+    max-height: 80px;
+    margin-top: 4px;
+}
+
+.grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr .5fr 5.5fr 2.6fr 4.8fr .5fr;
+    grid-template-areas:
+        "nav nav nav nav"
+        "banner banner banner banner"
+        "seccion1 seccion1 seccion1 seccion1"
+        "seccion2 seccion2 seccion2 seccion2"
+        "seccion3 seccion3 seccion3 seccion3"
+        "footer footer footer footer";
+}
+
+nav {
+    grid-area: nav;
+    background-color: black;
+}
+
+.container-fluid button {
+    background-color: white;
+}
+
+.navbar-nav li a {
+    color: aliceblue;
+}
+
+.navbar-nav li a:hover {
+    color: yellow
+}
+
+.banner {
+    grid-area: banner;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: none;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.banner a {
+    margin-bottom: 5px;
+    border: 2px solid black;
+    padding: 0.1em 1em;
+    text-decoration: none;
+    border-radius: 50px;
+    color: white;
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.banner a:hover {
+    background-color: aliceblue;
+    color: black;
+    /* Agregamos animaciones */
+    transition: .3s;
+}
+
+/* Terminamos de acomodar el nav y banner */
+.seccion1 {
+    grid-area: seccion1;
+    background: url("../img/index.png") no-repeat fixed;
+    background-size: cover;
+}
+
+.descuentos {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: darkblue;
+}
+
+.promociones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 3fr 3fr;
+    gap: 16px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promociones img,
+.promociones-genero img {
+    max-width: 10em;
+    max-height: 10em;
+}
+
+/* Agregamos animaciones */
+.promociones img:hover,
+.promociones-genero img:hover {
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+.sindescuento {
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.condescuento {
+    text-decoration: solid;
+    font-size: 1em;
+    margin-left: 0.5em;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+}
+
+/* Terminamos de acomodar y dar estilo a la seccion1 */
+/* Empezamos a trabajar la segunda seccion */
+.seccion2 {
+    grid-area: seccion2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.seccion2 p {
+    margin: 10px;
+    color: darkblue;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.seccion2 ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.seccion2 li {
+    list-style: none;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.seccion2 ul li img {
+    border: solid 1px black;
+    max-width: 14em;
+    max-height: 14em;
+}
+
+.seccion2 ul li img:hover {
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+/* Terminamos de acomodar y dar estilo a la seccion2 */
+/* Empezamos a trabajar la tercera seccion */
+.seccion3 {
+    grid-area: seccion3;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: url("../img/index.png") no-repeat fixed;
+    background-size: cover;
+}
+
+h2 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2em;
+}
+
+.parrafo {
+    font-size: 20px;
+    padding: 15px 60px 45px 60px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Terminamos de acomodar y dar estilo a la seccion3 */
+/* Empezamos a trabajar el footer */
+/* aca tuve que repetir la clase ya que el footer de Bootstrap no me de 
+no me dejaba aplicar las clases que necesitaba*/
+.grilla footer,
+.grilla-genero footer,
+.grilla-contacto footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+.card-footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0px;
+}
+
+.card-footer li {
+    padding: 15px;
+}
+
+.card-footer ul li img {
+    border: solid 1px black;
+    max-width: 2em;
+    max-height: 2em;
+}
+
+/* Terminamos de dar estilo al index */
+/* Empezamos a diagramar los html hombre, mujer y niños */
+.grilla-genero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .3fr .8fr 7.5fr 1.6fr .8fr .5fr;
+    grid-template-areas:
+        "nav nav nav nav"
+        "introduccion introduccion introduccion introduccion"
+        "fondo-genero fondo-genero fondo-genero fondo-genero"
+        "carousel carousel carousel carousel"
+        "fondo-pago fondo-pago fondo-pago fondo-pago "
+        "footer footer footer footer";
+}
+
+.introduccion {
+    grid-area: introduccion;
+    display: flex;
+    flex-direction: row;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e8e6f7 13px), repeating-linear-gradient(darkblue, red);
+    border: 2px solid black;
+}
+
+.introduccion img {
+    width: 300px;
+    height: 200px;
+}
+
+.introduccion p {
+    margin-left: 450px;
+    margin-top: 70px;
+    font-size: 50px;
+    font-family: 'Grape Nuts', cursive;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/* Terminamos de acomdar y dar estilo a la linea introduccion */
+/* Ahora diagramaremos los productos que eligimos */
+.fondo-genero {
+    grid-area: fondo-genero;
+}
+
+.promociones-genero {
+    padding: 20px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .8fr .8fr .8fr;
+    gap: 16px;
+}
+
+.zapatillas {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.promociones-genero form {
+    padding: 8px;
+}
+
+.promociones-genero select {
+    background-color: blanchedalmond;
+}
+
+.card-body form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-body form select {
+    margin: 3px;
+}
+
+/* En este punto ya terminamos de diagramar las promociones */
+/* Modificamos clases de Bootstrap */
+.carousel {
+    grid-area: carousel;
+    padding-left: 15px;
+    background: url("../img/contacto.jpeg") no-repeat fixed;
+    background-size: cover;
+    justify-content: center;
+}
+
+.carousel h3 {
+    margin-top: 5px;
+    padding-left: 32%;
+}
+
+.ajuste-carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+
+}
+
+.ajuste-carousel img {
+    width: 15em;
+    height: 15em;
+    margin: 10px;
+    border: solid 1px black;
+}
+
+.ajuste-carousel img:hover {
+    transform: scale(1.3, 1.3);
+    transition: .3s;
+    border: solid 1px black;
+}
+
+/* Empezamos a trabajar la linea fondo-pago */
+.fondo-pago {
+    grid-area: fondo-pago;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.fondo-pago p {
+    padding-bottom: 10px;
+    font-weight: bolder;
+}
+
+/* Con esto ya acomodamos y dimos estilo a los html hombre, mujer y niños */
+.grilla-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr 2fr 2fr .4fr;
+    grid-template-areas:
+        "nav nav nav nav"
+        "contacto contacto unirse unirse"
+        "contacto contacto unirse unirse"
+        "footer footer footer footer";
+}
+
+/* Empezamos a trabajar la columna contacto */
+.contacto {
+    grid-area: contacto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 90px;
+    background: url("../img/contacto.jpeg") no-repeat fixed;
+    background-size: cover;
+}
+
+.contacto h1 {
+    padding-left: 20px;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+h3 {
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.contacto a {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: rgb(38, 99, 2);
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.form-floating input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    margin-bottom: 10px;
+    margin-top: 12px;
+}
+
+/* Agregamos animaciones */
+.form-floating input:focus {
+    border: solid 2px darkblue;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.form-floating textarea:focus {
+    border: solid 2px darkblue;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.submit {
+    background-color: white;
+    padding: 3px 8px 3px 8px;
+    margin-left: 165px;
+    margin-right: 165px;
+}
+
+.submit:hover {
+    background-color: rgb(244, 248, 16);
+    color: black;
+}
+
+/* Terminamos de acomodar y dar estilo a la primera parte del html contacto */
+/* Empezamos a trabajar la segunda seccion ("unirse") */
+.unirse {
+    grid-area: unirse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url("../img/contacto.jpeg") no-repeat fixed;
+    background-size: cover;
+}
+
+.unirse h1 {
+    font-family: 'Grape Nuts', cursive;
+    font-size: 50px;
+    padding-bottom: 30px;
+}
+
+.unirse input:focus {
+    border: solid 2px darkblue;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.submit2 {
+    border-radius: 50px;
+    padding: 8px 15px 8px 15px;
+    font-family: 'Grape Nuts', cursive;
+    font-size: 25px;
+    margin-left: 250px;
+    margin-right: 250px;
+    font-weight: bold;
+    background-color: white;
+}
+
+/* Agregamos animaciones de aumento */
+.submit2:hover {
+    background-color: rgb(244, 248, 16);
+    color: black;
+    transform: scale(1.3, 1.3);
+    transition: .4s;
+}
+
+/* Terminamos de acomodar la ultima parte del html contacto */
+/* Ahora haremos que nuestras paginas sean responsive para distintos dispositivos*/
+@media (max-width:992px) {
+
+    /* Diagramamos la nueva grilla del index */
+    .grilla {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .5fr .4fr 6fr 2.6fr 4.3fr .5fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "banner banner banner banner"
+            "seccion1 seccion1 seccion1 seccion1"
+            "seccion2 seccion2 seccion2 seccion2"
+            "seccion3 seccion3 seccion3 seccion3"
+            "footer footer footer footer";
+    }
+
+    .seccion3 iframe {
+        width: 627px;
+        height: 309px;
+    }
+
+    /* Con esto ya acomodamos todo el index */
+    .grilla-genero {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr .5fr 6fr 1fr .5fr .3fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "introduccion introduccion introduccion introduccion"
+            "fondo-genero fondo-genero fondo-genero fondo-genero"
+            "carousel carousel carousel carousel"
+            "fondo-pago fondo-pago fondo-pago fondo-pago "
+            "footer footer footer footer";
+    }
+
+    .introduccion p {
+        margin-left: 200px;
+        margin-top: 70px;
+        font-size: 50px;
+    }
+
+    /* Creamos el style id para poder hacer desaparecer
+     algunos de los productos tanto en el ingreso de productos como dentro del carousel*/
+    #media {
+        display: none;
+    }
+
+    .carousel {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .carousel h3 {
+        padding-left: 22%;
+    }
+
+    /* Hasta ya acomodamos los tres generos */
+
+    .grilla-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr 2fr 2fr .3fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "contacto contacto contacto contacto"
+            "unirse unirse unirse unirse"
+            "footer footer footer footer";
+    }
+
+    .contacto {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .submit {
+        margin-left: 265px;
+        margin-right: 265px;
+    }
+
+    /* Se coloco el style ID ya que las clases de Bootstrap no permitian modificar la disposicion */
+    #distribucion {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #distribucion div {
+        margin: 10px;
+    }
+
+    /* Acomodamos todo el html contacto */
+}
+
+@media (max-width:768px) {
+
+    /* Diagramos el index para la nueva medida */
+    .grilla {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .5fr .4fr 9fr 6.8fr 5fr .2fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "banner banner banner banner"
+            "seccion1 seccion1 seccion1 seccion1"
+            "seccion2 seccion2 seccion2 seccion2"
+            "seccion3 seccion3 seccion3 seccion3"
+            "footer footer footer footer";
+    }
+
+    .seccion2 ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .seccion2 li {
+        padding: 10px;
+    }
+
+    .seccion2 ul li img {
+        max-width: 20em;
+        max-height: 20em;
+    }
+
+    iframe {
+        width: 527px;
+        height: 259px;
+    }
+
+
+    /* Terminamos de acomodar el nuevo index */
+    .grilla-genero {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .2fr .5fr 7fr .8fr .5fr .2fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "introduccion introduccion introduccion introduccion"
+            "fondo-genero fondo-genero fondo-genero fondo-genero"
+            "carousel carousel carousel carousel"
+            "fondo-pago fondo-pago fondo-pago fondo-pago "
+            "footer footer footer footer";
+    }
+
+    .introduccion p {
+        margin-left: 110px;
+    }
+
+    .ajuste-carousel img {
+        width: 12em;
+        height: 12em;
+    }
+
+    .carousel {
+        padding-left: 32px;
+    }
+
+    /* Con solo estos cambios ya acomodamos la nueva media query */
+}
+
+@media (max-width:425px) {
+    .grilla {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr .3fr 15fr 4.2fr 5fr .2fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "banner banner banner banner"
+            "seccion1 seccion1 seccion1 seccion1"
+            "seccion2 seccion2 seccion2 seccion2"
+            "seccion3 seccion3 seccion3 seccion3"
+            "footer footer footer footer";
+    }
+
+    .banner h1 {
+        font-size: 25px;
+    }
+
+    .promociones img,
+    .promociones-genero img {
+        max-width: 8em;
+        max-height: 8em;
+    }
+
+    .card-title {
+        font-size: .8rem;
+        font-weight: bold;
+    }
+
+    .seccion2 ul {
+        padding-left: 0px;
+    }
+
+    .seccion2 ul li img {
+        max-width: 14em;
+        max-height: 14em;
+    }
+
+    .pagos p {
+        font-size: 15px;
+    }
+
+    .pagos img {
+        max-width: 8em;
+        max-height: 8em;
+    }
+
+    .seccion3 iframe {
+        width: 327px;
+        height: 159px;
+        margin-bottom: 15px;
+    }
+
+    /* Terminamos de ajustar los nuevos valores del index */
+    .grilla-genero {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .2fr .3fr 15fr .4fr .2fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "introduccion introduccion introduccion introduccion"
+            "fondo-genero fondo-genero fondo-genero fondo-genero"
+            "fondo-pago fondo-pago fondo-pago fondo-pago "
+            "footer footer footer footer";
+    }
+
+    .introduccion {
+        background-image: none;
+    }
+
+    .introduccion img {
+        width: 425px;
+        height: 200px;
+    }
+
+    .introduccion p {
+        display: none;
+    }
+
+    .carousel {
+        display: none;
+    }
+
+    .fondo-pago p {
+        padding-bottom: 10px;
+        margin-left: 7px;
+        margin-right: 7px;
+        font-weight: bolder;
+    }
+
+    .fondo-pago img {
+        max-width: 12em;
+        max-height: 12em;
+        margin-bottom: 8px;
+    }
+
+    .grilla-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr 2fr 2fr .3fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "contacto contacto contacto contacto"
+            "unirse unirse unirse unirse"
+            "footer footer footer footer";
+    }
+
+    .unirse form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .form-control {
+        width: 90vw;
+    }
+
+    .contacto {
+        padding-left: 10px;
+    }
+
+    .submit {
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .submit2 {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:320px) {
+    .grilla {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .4fr .35fr 10.5fr 2.8fr .5fr .4fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "banner banner banner banner"
+            "seccion1 seccion1 seccion1 seccion1"
+            "seccion2 seccion2 seccion2 seccion2"
+            "seccion3 seccion3 seccion3 seccion3"
+            "footer footer footer footer";
+    }
+
+    .banner h1 {
+        font-size: 18px;
+    }
+
+    .banner a {
+        font-size: 15px;
+    }
+
+    .seccion2 p {
+        font-size: 16px;
+    }
+
+    .seccion3 h2,
+    .seccion3 p {
+        display: none;
+    }
+
+    .seccion3 iframe {
+        width: 289px;
+        height: 129px;
+        margin-top: 25px;
+    }
+
+    .card-footer p {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .grilla-genero {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .2fr .3fr 15fr .4fr .2fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "introduccion introduccion introduccion introduccion"
+            "fondo-genero fondo-genero fondo-genero fondo-genero"
+            "fondo-pago fondo-pago fondo-pago fondo-pago "
+            "footer footer footer footer";
+    }
+
+    .introduccion img {
+        width: 320px;
+        height: 170px;
+    }
+
+    .grilla-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr 1.8fr 1.5fr .3fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "contacto contacto contacto contacto"
+            "unirse unirse unirse unirse"
+            "footer footer footer footer";
+    }
+
+    .submit {
+        margin-left: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
